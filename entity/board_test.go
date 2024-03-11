@@ -12,3 +12,9 @@ func TestCreateNewBoard(t *testing.T) {
 	assert.NotNil(t, board)
 	assert.Equal(t, board.GetName(), "Aplicação web")
 }
+
+func TestAddNewTaskList(t *testing.T) {
+	board := entity.NewBoard("Aplicação web")
+	board.AddNewTaskList("Não iniciadas")
+	assert.Equal(t, len(board.GetTaskList()), 1)
+}
